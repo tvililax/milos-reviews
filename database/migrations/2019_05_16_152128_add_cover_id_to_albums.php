@@ -15,7 +15,7 @@ class AddCoverIdToAlbums extends Migration
     {
         Schema::table('albums', function (Blueprint $table) {
             $table->unsignedBigInteger('cover_id');
-            $table->foreign('cover_id')->references('id')->on('covers')->onDelete('cascade');
+            $table->foreign('cover_id')->references('id')->on('covers');
         });
     }
 
