@@ -15,11 +15,11 @@ class CreateArtistsTable extends Migration
     {
         Schema::create('artists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('nickname');
-            $table->date('birthdate');
-            $table->string('place');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('nickname')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('place')->nullable();
             $table->longText('bio');
             $table->timestamps();
         });
