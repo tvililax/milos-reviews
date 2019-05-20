@@ -1,0 +1,33 @@
+a{
+    text-decoration: none;
+}
+a:visited, a:focus{
+    color:inherit;
+}
+
+h1{
+    font-family: Staatliches;
+    text-align: center;
+    letter-spacing: 0.5em;
+}
+ul{
+    width:50%;
+    margin:0 auto;
+}
+ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 35px;
+    text-align: center;
+    font-family: Staatliches;
+    padding: 10px;
+    font-size: 20px;
+}
+li a{
+    padding: 10px;
+}
+li:hover{
+    background: #222;
+    color: white;
+    cursor:pointer;
+}
