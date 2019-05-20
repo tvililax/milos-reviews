@@ -11,17 +11,15 @@ h1{
     letter-spacing: 0.5em;
 }
 ul{
-    width:50%;
-    margin:0 auto;
+    text-align: center;
 }
 ul li{
     list-style-type: none;
     display: inline-block;
-    margin-left: 35px;
-    text-align: center;
     font-family: Staatliches;
     padding: 10px;
     font-size: 20px;
+    margin-right: 40px;
 }
 li a{
     padding: 10px;
