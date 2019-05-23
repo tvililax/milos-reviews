@@ -15,7 +15,7 @@ class ArtistController extends Controller
     {
         return Artist::find($artist);
     }
-    public function store(Request $request)
+    public function store(ArtistStoreRequest $request)
     {
         return Artist::create($request->all());
     }
