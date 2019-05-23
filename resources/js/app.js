@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import VueAxios from 'vue-axios'
+import axios from 'axios'
+Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
-
 import App from './views/App'
 import Artists from './views/Artists'
 import Home from './views/Home'
