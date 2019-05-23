@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/artists', 'ArtistController@index');
+Route::get('/artists/{artist}', 'ArtistController@show');
+Route::post('/artists', 'ArtistController@store');
