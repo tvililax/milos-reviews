@@ -47,11 +47,13 @@ li:hover{
 }
 .artist p{
     font-family: Staatliches;
-    position: relative;
-    top: -65px;
-    left: 10px;
     font-size: 25px;
     color: white;
+    position:relative;
+    top: -60px;
+    padding: 5px;
+    background: #222;
+    text-align: center;
 }
 li .router-link-exact-active.router-link-active{
     text-decoration: underline;

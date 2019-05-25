@@ -8,6 +8,7 @@ import App from './views/App'
 import Artists from './views/Artists'
 import Home from './views/Home'
 import Albums from './views/Albums'
+import Artist from './views/Artist'
 
 const router = new VueRouter({
     mode: 'history',
@@ -26,6 +27,12 @@ const router = new VueRouter({
             path: '/albums',
             name: 'albums',
             component: Albums,
+        }
+        ,
+        {
+            path: '/artist/',
+            name: 'artist',
+            component: Artist,
         }
     ],
 });

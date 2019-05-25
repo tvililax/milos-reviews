@@ -7,11 +7,14 @@
 			</div>
 		</a>
 	</div> -->
-	<ul id="example-1">
-		<li v-for="artist in artists" :key="artist.id">
-			{{ artist.first_name }}
-		</li>
-	</ul>
+	<div id="data-artists">
+		<div class='artist' v-for="artist in artists" :key="artist.id">
+			<a v-bind:href="'artist/'+artist.id">
+					<img v-bind:src=artist.picture_src />
+					<p class="artist-name">{{ artist.nickname }}</p>
+			</a>
+		</div>
+	</div>
 	
 </template>
 <script>
