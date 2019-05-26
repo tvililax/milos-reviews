@@ -1,5 +1,12 @@
+<template>
+	<div class="artist-info">
+        <img v-bind:src=artists[$route.params.id-1].picture_src />
+        <h2>{{ artists[$route.params.id-1].nickname }}</h2>
+        <p><i class="fas fa-map-marker-alt"></i> {{ artists[$route.params.id-1].place }}</p>
+        <p>{{ artists[$route.params.id-1].bio }}</p>
+	</div>
+</template>
 <script>
-let id = console.log(document.location.href.split('/')[4]);
 export default {
   data() {
     return {
@@ -14,9 +21,3 @@ export default {
   }
 }
 </script>
-<template>
-	<div>
-        <h1>pplsplplw</h1>
-        <p>{{ artist[id].nickname }}</p>
-	</div>
-</template>

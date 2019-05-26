@@ -1791,7 +1791,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var id = console.log(document.location.href.split('/')[4]);
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2468,10 +2475,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("pplsplplw")]),
+  return _c("div", { staticClass: "artist-info" }, [
+    _c("img", {
+      attrs: { src: _vm.artists[_vm.$route.params.id - 1].picture_src }
+    }),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.artist[_vm.id].nickname))])
+    _c("h2", [_vm._v(_vm._s(_vm.artists[_vm.$route.params.id - 1].nickname))]),
+    _vm._v(" "),
+    _c("p", [
+      _c("i", { staticClass: "fas fa-map-marker-alt" }),
+      _vm._v(" " + _vm._s(_vm.artists[_vm.$route.params.id - 1].place))
+    ]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.artists[_vm.$route.params.id - 1].bio))])
   ])
 }
 var staticRenderFns = []
@@ -17378,7 +17394,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'albums',
     component: _views_Albums__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
-    path: '/artist/',
+    path: '/artist/:id',
     name: 'artist',
     component: _views_Artist__WEBPACK_IMPORTED_MODULE_8__["default"]
   }]

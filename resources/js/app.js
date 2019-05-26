@@ -30,7 +30,7 @@ const router = new VueRouter({
         }
         ,
         {
-            path: '/artist/',
+            path: '/artist/:id',
             name: 'artist',
             component: Artist,
         }

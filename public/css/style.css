@@ -58,3 +58,14 @@ li:hover{
 li .router-link-exact-active.router-link-active{
     text-decoration: underline;
 }
+h2{
+    color: #222;
+    font-family: Staatliches;
+}
+.artist-info{
+    width: 80%;
+    margin:0 auto;
+}
+.artist-info img{
+    width: 300px;
+}

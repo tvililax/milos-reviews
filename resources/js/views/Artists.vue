@@ -10,8 +10,8 @@
 	<div id="data-artists">
 		<div class='artist' v-for="artist in artists" :key="artist.id">
 			<a v-bind:href="'artist/'+artist.id">
-					<img v-bind:src=artist.picture_src />
-					<p class="artist-name">{{ artist.nickname }}</p>
+				<img v-bind:src=artist.picture_src />
+				<p class="artist-name">{{ artist.nickname }}</p>
 			</a>
 		</div>
 	</div>
