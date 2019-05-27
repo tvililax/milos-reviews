@@ -9,7 +9,7 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        return Artist::all();
+        return Artist::without(['songs','albums'])->get();
     }
     public function show($artist)
     {
