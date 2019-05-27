@@ -30,6 +30,8 @@ class CreateSongsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('songs');
+        Schema::enableForeignKeyConstraints();
     }
 }

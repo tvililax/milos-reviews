@@ -27,7 +27,7 @@ class AddCoverIdToAlbums extends Migration
     public function down()
     {
         Schema::table('albums', function (Blueprint $table) {
-            //
+            $table->dropForeign('albums_cover_id_foreign');
         });
     }
 }

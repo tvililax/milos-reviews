@@ -30,6 +30,8 @@ class CreateAlbumTypeTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('album_type');
+        Schema::enableForeignKeyConstraints();
     }
 }

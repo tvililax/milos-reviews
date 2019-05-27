@@ -27,7 +27,7 @@ class AddAlbumIdToSongs extends Migration
     public function down()
     {
         Schema::table('songs', function (Blueprint $table) {
-            //
+            $table->dropForeign('songs_album_id_foreign');
         });
     }
 }

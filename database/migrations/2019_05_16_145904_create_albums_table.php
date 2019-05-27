@@ -29,6 +29,8 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('albums');
+        Schema::enableForeignKeyConstraints();
     }
 }
