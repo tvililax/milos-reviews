@@ -17,7 +17,7 @@ class CreateCoversTable extends Migration
             $table->bigIncrements('id');
             $table->string('src');
             $table->string('author_name')->nullable();
-            $table->unsignedBigInteger('album_id');
+            $table->unsignedBigInteger('album_id')->nullable();
             $table->foreign('album_id')->references('id')->on('albums');
             $table->timestamps();
         });

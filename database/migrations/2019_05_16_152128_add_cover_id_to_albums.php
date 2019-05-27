@@ -14,7 +14,7 @@ class AddCoverIdToAlbums extends Migration
     public function up()
     {
         Schema::table('albums', function (Blueprint $table) {
-            $table->unsignedBigInteger('cover_id');
+            $table->unsignedBigInteger('cover_id')->nullable();
             $table->foreign('cover_id')->references('id')->on('covers');
         });
     }
