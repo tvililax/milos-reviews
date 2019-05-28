@@ -1,9 +1,9 @@
 <template>
-  <div id="data-albums">
+  <div id="data-artists">
 		<div class='album' v-for="album in albums" :key="album.id">
 			<a v-bind:href="'album/'+album.id">
 				<img v-bind:src=album.cover.src />
-				<p class="album-name">{{ album.title }}</p>
+				<p class="artist-name">{{ album.title }} ({{ album.artist.nickname }})</p>
 			</a>
 		</div>
 	</div>

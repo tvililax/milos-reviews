@@ -69,3 +69,24 @@ h2{
 .artist-info img{
     width: 300px;
 }
+
+/**/
+
+.album{
+    display: inline-table;
+    margin: 0 50px;
+}
+
+.album img{
+    height: 180px;
+}
+.album p{
+    font-family: Staatliches;
+    font-size: 25px;
+    color: white;
+    position:relative;
+    top: -60px;
+    padding: 5px;
+    background: #222;
+    text-align: center;
+}

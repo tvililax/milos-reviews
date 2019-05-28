@@ -8,6 +8,7 @@ import App from './views/App'
 import Artists from './views/Artists'
 import Home from './views/Home'
 import Albums from './views/Albums'
+import Album from './views/Album'
 import Artist from './views/Artist'
 
 const router = new VueRouter({
@@ -33,6 +34,12 @@ const router = new VueRouter({
             path: '/artist/:id',
             name: 'artist',
             component: Artist,
+        }
+        ,
+        {
+            path: '/album/:id',
+            name: 'album',
+            component: Album,
         }
     ],
 });
