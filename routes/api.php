@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/artists', 'ArtistController@index');
-Route::get('/artists/{artist}', 'ArtistController@show');
-Route::post('/artists', 'ArtistController@store');
+Route::apiResource('artists', 'ArtistController');
+Route::apiResource('songs', 'SongController');
+Route::apiResource('albums', 'AlbumController');

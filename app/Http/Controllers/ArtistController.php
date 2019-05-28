@@ -9,14 +9,26 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        return Artist::without(['songs','albums'])->get();
+        return Artist::without(['songs'])->get();
     }
-    public function show($artist)
-    {
-        return Artist::find($artist);
-    }
+
     public function store(ArtistStoreRequest $request)
     {
         return Artist::create($request->all());
+    }
+
+    public function show($id)
+    {
+        return Artist::with('albums')->find($id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    public function destroy($id)
+    {
+        //
     }
 }
