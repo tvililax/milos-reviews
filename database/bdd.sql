@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 28 mai 2019 à 15:27
+-- Généré le :  mar. 28 mai 2019 à 19:06
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `milos`
+-- Base de données :  `milos_reviews`
 --
 
 -- --------------------------------------------------------
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
 --
 
 INSERT INTO `artists` (`id`, `first_name`, `last_name`, `nickname`, `birthdate`, `place`, `bio`, `created_at`, `updated_at`, `picture_src`) VALUES
-(1, '', '', 'Booba', '1975-04-27', 'New Wilsonberg', 'Hatter continued, \'in this way:-- \"Up above the world go round!\"\' \'Somebody said,\' Alice whispered, \'that it\'s done by everybody minding their own business!\' \'Ah, well! It means much the most curious thing I know. Silence all round, if you like,\' said the Gryphon whispered in reply, \'for fear they should forget them before the.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://lorempixel.com/600/350/?53859'),
+(1, '', '', 'Booba', '1975-04-27', 'Boulogne-Billancourt (92)', 'Booba grandit dans les Hauts-de-Seine, là où il rencontre Ali pour former le groupe Lunatic qui le révèle au grand public. Plus de 20 ans plus tard, il est le pionnier du rap français, l\'un des plus grands artistes de la musique française. \"Le Duc de Boulogne\" a publié 9 albums studio, ainsi que 4 mixtapes.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyPRUKuyQQJY1FOQCq_MW81Xb6B7YR_DOlVUEmcHFZUVKQZDrVdw'),
 (2, '', '', 'Kaaris', '1977-10-31', 'New Jeffrey', 'DON\'T know,\' said the Footman, \'and that for two reasons.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://lorempixel.com/600/350/?43754'),
 (3, '', '', 'Ninho', '1996-12-30', 'Schulistmouth', 'I\'ll set Dinah at you!\' There was a queer-shaped little creature, and held out its arms folded, quietly smoking a long tail, certainly,\' said Alice, a good deal on where you.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://lorempixel.com/600/350/?19817'),
 (4, '', '', 'Niro', '1997-12-21', 'O\'Connerhaven', 'Why, I haven\'t been invited yet.\' \'You\'ll see me there,\' said the King. (The jury all wrote down all three dates on their slates, when the White Rabbit.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://lorempixel.com/600/350/?47956'),
@@ -189,7 +189,15 @@ CREATE TABLE IF NOT EXISTS `songs` (
   PRIMARY KEY (`id`),
   KEY `songs_artist_id_foreign` (`artist_id`),
   KEY `songs_album_id_foreign` (`album_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `songs`
+--
+
+INSERT INTO `songs` (`id`, `artist_id`, `title`, `duration`, `created_at`, `updated_at`, `album_id`) VALUES
+(1, 1, 'Ridin', '00:02:13', NULL, NULL, 1),
+(2, 1, 'Terrain', '00:02:06', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
