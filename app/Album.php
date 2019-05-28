@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
 
-    protected $with = ['cover', 'songs', 'types'];
+    protected $with = ['cover', 'types'];
 
     public function cover()
     {

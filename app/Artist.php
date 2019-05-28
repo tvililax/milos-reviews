@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    protected $with = ['songs'];
-
     public function albums()
     {
         return $this->hasMany('App\Album');

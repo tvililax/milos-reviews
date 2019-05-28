@@ -9,7 +9,7 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        return Artist::without(['songs'])->get();
+        return Artist::all();
     }
 
     public function store(ArtistStoreRequest $request)
@@ -19,7 +19,7 @@ class ArtistController extends Controller
 
     public function show($id)
     {
-        return Artist::with('albums')->find($id);
+        return Artist::with(['albums', 'songs'])->find($id);
     }
 
     public function update(Request $request, $id)
