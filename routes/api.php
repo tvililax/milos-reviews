@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('artists', 'ArtistController');
 Route::apiResource('songs', 'SongController');
 Route::apiResource('albums', 'AlbumController');
+
+Route::fallback(function(){
+    return response()->json(['message' => 'Not Found!'], 404);
+});
