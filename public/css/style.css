@@ -90,3 +90,9 @@ h2{
     background: #222;
     text-align: center;
 }
+.artist-album img{
+    width: 150px;
+}
+.artist-album p{
+    font-family: Staatliches;
+}
