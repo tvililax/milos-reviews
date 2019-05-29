@@ -3,8 +3,8 @@
         <h1>Milos Reviews</h1>
 
         <ul>
-            <li><router-link :to="{ name: 'home' }">Home</router-link></li>
-            <li><router-link :to="{ name: 'artists' }">Artists</router-link></li>
+            <li><router-link :to="{ name: 'home' }">Accueil</router-link></li>
+            <li><router-link :to="{ name: 'artists' }">Artistes</router-link></li>
             <li><router-link :to="{ name: 'albums' }">Albums</router-link></li>
         </ul>
 

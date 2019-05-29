@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SongStoreRequest;
 use App\Song;
 
 class SongController extends Controller
@@ -12,23 +13,29 @@ class SongController extends Controller
         return Song::with(['artist', 'album'])->paginate(15);
     }
 
-    public function store(Request $request)
-    {
-        return Song::create($request->all());
-    }
-
     public function show($id)
     {
         return Song::with(['artist', 'album'])->find($id);
     }
 
-    public function update(Request $request, $id)
+    public function store(SongStoreRequest $request)
     {
-        //
+        $song = Song::create($request->all());
+
+        return response()->json($song, 201);
     }
 
-    public function destroy($id)
+    public function update(SongStoreRequest $request, Song $song)
     {
-        //
+        $song->update($request->all());
+
+        return response()->json($song, 200);
+    }
+
+    public function destroy(Song $song)
+    {
+        $song->delete();
+
+        return response()->json('Deleted', 204);
     }
 }

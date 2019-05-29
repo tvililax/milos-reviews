@@ -9,7 +9,10 @@ class AlbumController extends Controller
 {
     public function index()
     {
-        return Album::with('artist')->paginate(15);
+        if ( request()->input('page') == 'all') {
+            return Album::all();
+        }
+        return Album::with(['artist', 'cover'])->paginate(15);
     }
 
     public function store(Request $request)
@@ -29,6 +32,6 @@ class AlbumController extends Controller
 
     public function destroy($id)
     {
-        //
+        Artist::delete($id);
     }
 }
