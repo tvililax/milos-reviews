@@ -29,7 +29,6 @@ class SongController extends Controller
                 ]
             ]);
 
-
             $result = json_decode($result->getBody()->getContents());
             $body = $result->message->body;
 
