@@ -29,7 +29,7 @@
           <input type="submit" value="Créer">
         </div>
       </form>
-      {{ output }}
+      {{ error }}
   </div>
 </template>
 <script>
@@ -42,7 +42,7 @@ export default {
       duration: '',
       selected_artist: this.$route.query.artist,
       selected_album: this.$route.query.album,
-      output: ''
+      error: null
     }
   },
   methods: {
@@ -56,10 +56,11 @@ export default {
           album_id: this.selected_album
       })
       .then(function (response) {
-          currentObj.output = response.data;
+        currentObj.error = null;
+        // TODO redirect
       })
       .catch(function (error) {
-          currentObj.output = error;
+          currentObj.error = error;
       });
     }
   },

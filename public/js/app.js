@@ -1987,7 +1987,7 @@ __webpack_require__.r(__webpack_exports__);
       duration: '',
       selected_artist: this.$route.query.artist,
       selected_album: this.$route.query.album,
-      output: ''
+      error: null
     };
   },
   methods: {
@@ -2000,9 +2000,9 @@ __webpack_require__.r(__webpack_exports__);
         artist_id: this.selected_artist,
         album_id: this.selected_album
       }).then(function (response) {
-        currentObj.output = response.data;
+        currentObj.error = null; // TODO redirect
       })["catch"](function (error) {
-        currentObj.output = error;
+        currentObj.error = error;
       });
     }
   },
@@ -2975,7 +2975,7 @@ var render = function() {
       _vm._v(" "),
       _vm._m(0)
     ]),
-    _vm._v("\n    " + _vm._s(_vm.output) + "\n")
+    _vm._v("\n    " + _vm._s(_vm.error) + "\n")
   ])
 }
 var staticRenderFns = [
