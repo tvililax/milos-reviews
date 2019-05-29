@@ -9,7 +9,7 @@ use App\Http\Requests\ArtistStoreRequest;
 
 class ArtistController extends Controller
 {
-    public function index(DB $query)
+    public function index()
     {
         if ( request()->input('page') == 'all') {
             return Artist::all();
