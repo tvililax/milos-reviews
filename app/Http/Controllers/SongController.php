@@ -9,7 +9,7 @@ class SongController extends Controller
 {
     public function index()
     {
-        return Song::with(['artist', 'album'])->get();
+        return Song::with(['artist', 'album'])->paginate(15);
     }
 
     public function store(Request $request)

@@ -9,7 +9,7 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        return Artist::all();
+        return Artist::paginate(15);
     }
 
     public function store(ArtistStoreRequest $request)

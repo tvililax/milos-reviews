@@ -9,7 +9,7 @@ class AlbumController extends Controller
 {
     public function index()
     {
-        return Album::with('artist')->get();
+        return Album::with('artist')->paginate(15);
     }
 
     public function store(Request $request)
