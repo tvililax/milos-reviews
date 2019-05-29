@@ -1770,6 +1770,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1862,6 +1865,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2462,13 +2473,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "artist-info" }, [
-    _c("img", { attrs: { src: _vm.album.cover.src } }),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(_vm.album.title))]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.album.artist.nickname))])
-  ])
+  return _c(
+    "div",
+    { staticClass: "artist-info" },
+    [
+      _c("img", { attrs: { src: _vm.album.cover.src } }),
+      _vm._v(" "),
+      _c("h2", [
+        _vm._v(
+          _vm._s(_vm.album.title) +
+            " (" +
+            _vm._s(_vm.album.artist.nickname) +
+            ")"
+        )
+      ]),
+      _vm._v(" "),
+      _c("h3", [_vm._v("Morceaux : ")]),
+      _vm._v(" "),
+      _vm._l(_vm.album.songs, function(song) {
+        return _c("div", { key: song.id }, [
+          _c("p", [_vm._v(_vm._s(song.title) + ", " + _vm._s(song.duration))])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2593,18 +2622,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "artist-info" }, [
-    _c("img", { attrs: { src: _vm.artist.picture_src } }),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(_vm.artist.nickname))]),
-    _vm._v(" "),
-    _c("p", [
-      _c("i", { staticClass: "fas fa-map-marker-alt" }),
-      _vm._v(" " + _vm._s(_vm.artist.place))
-    ]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.artist.bio))])
-  ])
+  return _c(
+    "div",
+    { staticClass: "artist-info" },
+    [
+      _c("img", { attrs: { src: _vm.artist.picture_src } }),
+      _vm._v(" "),
+      _c("h2", [_vm._v(_vm._s(_vm.artist.nickname))]),
+      _vm._v(" "),
+      _c("p", [
+        _c("i", { staticClass: "fas fa-map-marker-alt" }),
+        _vm._v(" " + _vm._s(_vm.artist.place))
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.artist.bio))]),
+      _vm._v(" "),
+      _c("h3", [_vm._v(" Albums : ")]),
+      _vm._v(" "),
+      _vm._l(_vm.artist.albums, function(album) {
+        return _c("div", { key: album.id, staticClass: "artist-album" }, [
+          _c("a", { attrs: { href: "../album/" + album.id } }, [
+            _c("img", { attrs: { src: album.cover.src } }),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(album.title))])
+          ])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

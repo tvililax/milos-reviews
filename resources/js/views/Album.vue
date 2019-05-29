@@ -1,8 +1,11 @@
 <template>
 	<div class="artist-info">
         <img v-bind:src=album.cover.src />
-        <h2>{{ album.title }}</h2>
-        <p>{{ album.artist.nickname }}</p>
+        <h2>{{ album.title }} ({{ album.artist.nickname }})</h2>
+        <h3>Morceaux : </h3>
+        <div v-for="song in album.songs" :key="song.id">
+            <p>{{ song.title }}, {{ song.duration }}</p>
+        </div>
 	</div>
 </template>
 <script>

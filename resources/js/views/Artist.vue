@@ -4,6 +4,14 @@
         <h2>{{ artist.nickname }}</h2>
         <p><i class="fas fa-map-marker-alt"></i> {{ artist.place }}</p>
         <p>{{ artist.bio }}</p>
+        <h3> Albums : </h3>
+        <div class="artist-album" v-for="album in artist.albums" :key="album.id">
+          <a v-bind:href="'../album/'+album.id">
+            <img v-bind:src=album.cover.src />
+            <p>{{ album.title }}</p>
+          </a>
+        </div>
+        
 	</div>
 </template>
 <script>
