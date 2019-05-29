@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SongStoreRequest;
 use App\Song;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 class SongController extends Controller
 {
@@ -15,7 +17,27 @@ class SongController extends Controller
 
     public function show($id)
     {
-        return Song::with(['artist', 'album'])->find($id);
+        $song = Song::with(['artist', 'album'])->find($id);
+
+        $client = new Client();
+        $result = $client->request('GET', 'http://api.musixmatch.com/ws/1.1/track.lyrics.get', [
+            'query' => [
+                'track_id' => $song->lyrics_id,
+                'apikey'   => env('MUSIXMATCH_KEY')
+            ]
+        ]);
+
+
+        $result = json_decode($result->getBody()->getContents());
+        $body = $result->message->body;
+
+        if ( !empty($body) )
+        {
+            $lyrics = $body->lyrics->lyrics_body;
+            $song->lyrics = $lyrics;
+        }
+
+        return $song;
     }
 
     public function store(SongStoreRequest $request)
