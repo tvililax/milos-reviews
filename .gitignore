@@ -5,6 +5,7 @@
 /vendor
 /public/dist
 /public/build
+/public/js
 /public/mix-manifest.json
 .env
 .phpunit.result.cache
