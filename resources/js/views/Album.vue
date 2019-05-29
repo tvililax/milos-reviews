@@ -3,7 +3,7 @@
         <img v-bind:src=album.cover.src />
         <h2>{{ album.title }} ({{ album.artist.nickname }})</h2>
         <h3>Morceaux : </h3>
-        <a href="/song/create">Ajouter un nouveau son</a>
+        <a :href="'/song/create?album=' + album.id + '&artist=' + album.artist.id ">Ajouter un nouveau son</a>
         <div v-for="song in album.songs" :key="song.id">
             <p>{{ song.title }}, {{ song.duration }}</p>
         </div>
@@ -14,7 +14,6 @@ export default {
   data() {
     return {
       album: null
-      // autre data possible
     }
   },
   mounted () {

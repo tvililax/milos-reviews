@@ -1777,8 +1777,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      album: null // autre data possible
-
+      album: null
     };
   },
   mounted: function mounted() {
@@ -2566,9 +2565,19 @@ var render = function() {
       _vm._v(" "),
       _c("h3", [_vm._v("Morceaux : ")]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "/song/create" } }, [
-        _vm._v("Ajouter un nouveau son")
-      ]),
+      _c(
+        "a",
+        {
+          attrs: {
+            href:
+              "/song/create?album=" +
+              _vm.album.id +
+              "&artist=" +
+              _vm.album.artist.id
+          }
+        },
+        [_vm._v("Ajouter un nouveau son")]
+      ),
       _vm._v(" "),
       _vm._l(_vm.album.songs, function(song) {
         return _c("div", { key: song.id }, [
