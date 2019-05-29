@@ -5,9 +5,7 @@
         <h3>Morceaux : </h3>
         <a :href="'/song/create?album=' + album.id + '&artist=' + album.artist.id ">Ajouter un nouveau son</a>
         <div v-for="song in album.songs" :key="song.id">
-          <a v-bind:href="'/song/'+song.id">
             <p>{{ song.title }}, {{ song.duration }}</p>
-          </a>
         </div>
 	</div>
 </template>

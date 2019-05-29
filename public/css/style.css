@@ -35,10 +35,8 @@ li:hover{
 }
 .artist{
     width:250px;
-    height: 190px;
-    overflow: hidden;
-    display: inline-block;
-    margin: 20px 50px;
+    display: inline-table;
+    margin: 0 50px;
 }
 
 .artist img{
