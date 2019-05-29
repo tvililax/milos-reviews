@@ -1801,18 +1801,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      results: null
+      results: null,
+      url: 'http://127.0.0.1:8000/api/albums ',
+      pagination: []
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    getResults: function getResults() {
+      var _this = this;
 
-    this.axios.get('http://127.0.0.1:8000/api/albums').then(function (response) {
-      return _this.results = response.data;
-    });
+      var $this = this;
+      this.axios.get(this.url).then(function (response) {
+        _this.results = response.data;
+        $this.makePagination(response.data);
+      });
+    },
+    makePagination: function makePagination(data) {
+      var pagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.pagination = pagination;
+    },
+    fetchPaginateResults: function fetchPaginateResults(url) {
+      this.url = url;
+      this.getResults();
+    }
+  },
+  mounted: function mounted() {
+    this.getResults();
   }
 });
 
@@ -1885,8 +1913,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       results: null,
       url: 'http://127.0.0.1:8000/api/artists ',
-      pagination: [] // autre data possible
-
+      pagination: []
     };
   },
   methods: {
@@ -2662,21 +2689,60 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "data-artists" } },
-    _vm._l(_vm.results.data, function(album) {
-      return _c("div", { key: album.id, staticClass: "album" }, [
-        _c("a", { attrs: { href: "album/" + album.id } }, [
-          _c("img", { attrs: { src: album.cover.src } }),
-          _vm._v(" "),
-          _c("p", { staticClass: "artist-name" }, [
-            _vm._v(
-              _vm._s(album.title) + " (" + _vm._s(album.artist.nickname) + ")"
-            )
+    { attrs: { id: "data-albums" } },
+    [
+      _vm._l(_vm.results.data, function(album) {
+        return _c("div", { key: album.id, staticClass: "album" }, [
+          _c("a", { attrs: { href: "album/" + album.id } }, [
+            _c("img", { attrs: { src: album.cover.src } }),
+            _vm._v(" "),
+            _c("p", { staticClass: "artist-name" }, [
+              _vm._v(
+                _vm._s(album.title) + " (" + _vm._s(album.artist.nickname) + ")"
+              )
+            ])
           ])
         ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "pagination" }, [
+        _c(
+          "button",
+          {
+            attrs: { disabled: !_vm.pagination.prev_page_url },
+            on: {
+              click: function($event) {
+                return _vm.fetchPaginateResults(_vm.pagination.prev_page_url)
+              }
+            }
+          },
+          [_vm._v("Previous")]
+        ),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(
+            "Page " +
+              _vm._s(_vm.pagination.current_page) +
+              " sur " +
+              _vm._s(_vm.pagination.last_page)
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            attrs: { disabled: !_vm.pagination.next_page_url },
+            on: {
+              click: function($event) {
+                return _vm.fetchPaginateResults(_vm.pagination.next_page_url)
+              }
+            }
+          },
+          [_vm._v("Next")]
+        )
       ])
-    }),
-    0
+    ],
+    2
   )
 }
 var staticRenderFns = []
