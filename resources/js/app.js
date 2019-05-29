@@ -8,10 +8,15 @@ Vue.use(VueRouter)
 
 import App from './views/App'
 import Home from './views/Home'
+
 import Artists from './views/Artists'
 import Artist from './views/Artist'
-import Albums from './views/Albums'
-import Album from './views/Album'
+
+import Albums from './views/albums/index'
+import Album from './views/albums/show'
+import AlbumCreate from './views/albums/create'
+import AlbumEdit from './views/albums/edit'
+
 import Song from './views/songs/show'
 import SongCreate from './views/songs/create'
 import SongEdit from './views/songs/edit'
@@ -43,6 +48,16 @@ const router = new VueRouter({
             path: '/album/:id',
             name: 'album',
             component: Album,
+        },
+        {
+            path: '/album/create',
+            name: 'albumCreate',
+            component: AlbumCreate,
+        },
+        {
+            path: '/album/edit/:id',
+            name: 'albumEdit',
+            component: AlbumEdit,
         },
         {
             path: '/song',
