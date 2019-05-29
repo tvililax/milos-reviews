@@ -60,7 +60,7 @@ const router = new VueRouter({
             component: AlbumEdit,
         },
         {
-            path: '/song',
+            path: '/song/:id',
             name: 'song',
             component: Song,
         },
