@@ -9,8 +9,8 @@ Vue.use(VueRouter)
 import App from './views/App'
 import Home from './views/Home'
 
-import Artists from './views/Artists'
-import Artist from './views/Artist'
+import Artists from './views/artists/index'
+import Artist from './views/artists/show'
 
 import Albums from './views/albums/index'
 import Album from './views/albums/show'
