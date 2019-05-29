@@ -50,27 +50,27 @@ const router = new VueRouter({
             component: Album,
         },
         {
-            path: '/album/create',
+            path: '/albums/create',
             name: 'albumCreate',
             component: AlbumCreate,
         },
         {
-            path: '/album/edit/:id',
+            path: '/album/:id/edit',
             name: 'albumEdit',
             component: AlbumEdit,
         },
         {
-            path: '/song',
+            path: '/song/:id',
             name: 'song',
             component: Song,
         },
         {
-            path: '/song/create',
+            path: '/songs/create',
             name: 'songCreate',
             component: SongCreate,
         },
         {
-            path: '/song/edit/:id',
+            path: '/song/:id/edit',
             name: 'songEdit',
             component: SongEdit,
         }
