@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Album extends Model
 {
-
+    protected $fillable = ['title', 'artist_id', 'cover_id'];
     protected $with = ['cover', 'types'];
 
     public function cover()

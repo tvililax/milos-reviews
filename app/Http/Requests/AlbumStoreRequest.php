@@ -14,6 +14,8 @@ class AlbumStoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'artist_id' => 'required|integer',
+            'cover' => 'required|mimes:jpeg,png',
         ];
     }
 }

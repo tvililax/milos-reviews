@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Album;
+use App\Http\Requests\AlbumStoreRequest;
 
 class AlbumController extends Controller
 {
@@ -15,9 +16,20 @@ class AlbumController extends Controller
         return Album::with(['artist', 'cover'])->paginate(15);
     }
 
-    public function store(Request $request)
+    public function store(AlbumStoreRequest $request)
     {
-        return Album::create($request->all());
+        $album = Album::create($request->all());
+
+        $path  = $request->file('cover')->store('covers', ['disk' => 'public']);
+        $cover = $album->cover()->create([
+            'src'      => asset('/storage/'.$path),
+            'album_id' => $album->id
+        ]);
+
+        $album->cover_id = $cover->id;
+        $album->save();
+
+        return $album;
     }
 
     public function show($id)

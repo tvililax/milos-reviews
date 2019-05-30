@@ -4,8 +4,11 @@
         <h3>{{ song.artist.nickname }}, {{ song.album.title }}</h3>
 
         <img class='cover-song' v-bind:src=song.album.cover.src />
-        <h3> Paroles </h3>
-        <p>{{ song.lyrics }}</p>
+
+        <div v-if="song.lyrics">
+          <h3> Paroles </h3>
+          <p>{{ song.lyrics }}</p>
+        </div>
 	</div>
 </template>
 <script>
