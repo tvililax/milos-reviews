@@ -97,6 +97,9 @@ h2{
     background: #222;
     text-align: center;
 }
+.artist-album{
+    width: 150px;
+}
 .artist-album img{
     width: 150px;
 }
@@ -148,4 +151,30 @@ footer h3{
 }
 a{
     color: inherit;
+}
+.add-song{
+    font-family: Staatliches;
+    color: white;
+    background: #222;
+    padding: 5px;
+    position: relative;
+    top:5px;
+}
+.add-song:hover{
+    background: grey;
+}
+tr:nth-child(2n){
+ background: lightgrey;   
+}
+table{
+    border: 1px solid black;
+}
+td{
+    width: 200px;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+#album-content{
+    position: absolute;
+    top:15%;
+    right: 15%;
 }

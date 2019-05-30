@@ -1,11 +1,17 @@
 <template>
 	<div class="artist-info">
+        <div id="left-album">
         <img v-bind:src=album.cover.src />
         <h2>{{ album.title }} ({{ album.artist.nickname }})</h2>
+        </div>
+        <div id="album-content">
         <h3>Morceaux : </h3>
-        <a :href="'/songs/create?album=' + album.id + '&artist=' + album.artist.id ">Ajouter un nouveau son</a>
-        <div v-for="song in album.songs" :key="song.id">
-            <p><a :href="'../song/'+song.id">{{ song.title }}, {{ song.duration }}</a></p>
+        <table>
+        <tr v-for="song in album.songs" :key="song.id">
+            <a :href="'../song/'+song.id"><td>{{ song.title }}</td> <td>{{ song.duration }}</td></a>
+        </tr>
+        </table>
+        <a :href="'/songs/create?album=' + album.id + '&artist=' + album.artist.id "><span class='add-song'>Ajouter un nouveau son</span></a>
         </div>
 	</div>
 </template>

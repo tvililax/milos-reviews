@@ -29,6 +29,7 @@
           <input type="submit" value="Créer">
         </div>
       </form>
+      <div style='color: green;' id="message"></div>
       {{ error }}
   </div>
 </template>
@@ -57,6 +58,7 @@ export default {
       })
       .then(function (response) {
         currentObj.error = null;
+        document.querySelector("#message").innerHTML = 'Morceau ajouté !';
         // TODO redirect
       })
       .catch(function (error) {
