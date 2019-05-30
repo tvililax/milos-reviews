@@ -1,10 +1,15 @@
+body{
+    margin:0 auto;
+}
 a{
     text-decoration: none;
 }
 a:visited, a:focus{
     color:inherit;
 }
-
+h3,p{
+    font-family: 'Noto Sans HK', sans-serif;
+}
 h1{
     font-family: Staatliches;
     text-align: center;
@@ -34,9 +39,11 @@ li:hover{
     margin:0 auto;
 }
 .artist{
-    width:250px;
-    display: inline-table;
-    margin: 0 50px;
+    height: 190px;
+    width: 300px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px 50px;
 }
 
 .artist img{
@@ -93,6 +100,52 @@ h2{
 .artist-album img{
     width: 150px;
 }
+.cover-song{
+    width: 100px;
+}
 .artist-album p{
     font-family: Staatliches;
+}
+footer{
+    height: 75px;
+    width: 100%;
+    background: #222;
+    color: white;
+    margin:0 auto;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 12px;
+}
+footer h3{
+    text-align: center;
+}
+.pagination{
+    text-align: center;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.page{
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+}
+.page:hover{
+    cursor: pointer;
+    color: #222;
+    background: white;
+}
+/**/
+.song-info{
+    width: 80%;
+    margin:0 auto;
+}
+.song-info img{
+    width: 200px;
+}
+.song-create{
+    font-family: 'Noto Sans HK', sans-serif;
+    text-align:center;
+}
+a{
+    color: inherit;
 }

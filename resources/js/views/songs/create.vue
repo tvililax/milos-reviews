@@ -2,24 +2,24 @@
   <div class="song-create">
       <form @submit="formSubmit">
         <div>
-          <label for="title">Choissez un nom :</label>
+          <label for="title">Choisissez un nom :</label>
           <input type="text" name="title" id="title" v-model="title" required>
         </div>
 
         <div>
-          <label for="duration">Choissez un durée (format : Hh:mm:ii) :</label>
+          <label for="duration">Choisissez un durée (format : HH:MM:SS) :</label>
           <input type="text" name="duration" id="duration" v-model="duration" required>
         </div>
 
         <div>
-          <label for="artist_id">Choissez un artiste</label>
+          <label for="artist_id">Choisissez un artiste</label>
           <select id="artist_id" v-model="selected_artist">
               <option v-for="artist in artists" :key="artist.id" :value="artist.id">{{ artist.nickname }}</option>
           </select>
         </div>
 
         <div>
-          <label for="album_id">Choissez un album</label>
+          <label for="album_id">Choisissez un album</label>
           <select id="album_id" v-model="selected_album">
               <option v-for="album in albums" :key="album.id" :value="album.id">{{ album.title }}</option>
           </select>

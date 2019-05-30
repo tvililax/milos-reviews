@@ -3,9 +3,9 @@
         <img v-bind:src=album.cover.src />
         <h2>{{ album.title }} ({{ album.artist.nickname }})</h2>
         <h3>Morceaux : </h3>
-        <a :href="'/song/create?album=' + album.id + '&artist=' + album.artist.id ">Ajouter un nouveau son</a>
+        <a :href="'/songs/create?album=' + album.id + '&artist=' + album.artist.id ">Ajouter un nouveau son</a>
         <div v-for="song in album.songs" :key="song.id">
-            <p>{{ song.title }}, {{ song.duration }}</p>
+            <p><a :href="'../song/'+song.id">{{ song.title }}, {{ song.duration }}</a></p>
         </div>
 	</div>
 </template>

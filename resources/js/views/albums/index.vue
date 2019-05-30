@@ -3,14 +3,14 @@
 		<div class='album' v-for="album in results.data" :key="album.id">
 			<a v-bind:href="'album/'+album.id">
 				<img v-bind:src=album.cover.src />
-				<p class="artist-name">{{ album.title }} ({{ album.artist.nickname }})</p>
+				<p class="artist-name">{{ album.title }} - {{ album.artist.nickname }}</p>
 			</a>
 		</div>
 
     <div class="pagination">
-      <button v-on:click="fetchPaginateResults(pagination.prev_page_url)" :disabled="!pagination.prev_page_url">Previous</button>
+      <button class='page' v-on:click="fetchPaginateResults(pagination.prev_page_url)" :disabled="!pagination.prev_page_url"><i class="fas fa-angle-left"></i></button>
       <span>Page {{ pagination.current_page }} sur {{ pagination.last_page }}</span>
-      <button v-on:click="fetchPaginateResults(pagination.next_page_url)" :disabled="!pagination.next_page_url">Next</button>
+      <button class='page' v-on:click="fetchPaginateResults(pagination.next_page_url)" :disabled="!pagination.next_page_url"><i class="fas fa-angle-right"></i></button>
     </div>
 	</div>
 </template>

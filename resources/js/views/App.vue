@@ -11,6 +11,7 @@
         <div class="container">
             <router-view></router-view>
         </div>
+        <footer><h3>Milos Reviews - Copyrights 2019</h3></footer>
     </div>
 </template>
 <script>
