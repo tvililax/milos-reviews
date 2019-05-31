@@ -1,6 +1,8 @@
 <template>
+<div>
+  <div class='back'><router-link :to="{ name: 'albums'}">Retour</router-link></div><br>
   <div class="album-create">
-    <div style='float:left;'><router-link :to="{ name: 'albums'}">Retour</router-link></div><br>
+    
       <form @submit="formSubmit">
         <div>
           <label for="title">Choisissez un nom :</label>
@@ -25,6 +27,7 @@
       </form>
       {{ error }}
   </div>
+</div>
 </template>
 <script>
 export default {

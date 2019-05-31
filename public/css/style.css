@@ -187,3 +187,15 @@ td{
     margin:0 auto;
     margin-bottom: 50px;
 }
+.album-create{
+    width:80%;
+    margin:0 auto;
+}
+.back{
+    float: left;
+    margin: 10px;
+    color:white;
+    background: #222;
+    font-family: Staatliches;
+    padding: 5px;
+}
