@@ -1,5 +1,9 @@
 <template>
   <div id="data-albums">
+    <form @submit="fetchSearchBarResults">
+      <input type="text" name="title" id="title" v-model="query_search">
+    </form>
+
     <div class='add-list'><router-link :to="{ name: 'albumCreate'}">Ajouter un album</router-link></div>
 		<div class='album' v-for="album in results.data" :key="album.id">
 			<a v-bind:href="'album/'+album.id">
@@ -7,7 +11,7 @@
 				<p class="artist-name">{{ album.title }} - {{ album.artist.nickname }}</p>
 			</a>
 		</div>
-    
+
     <div class="pagination">
       <button class='page' v-on:click="fetchPaginateResults(pagination.prev_page_url)" :disabled="!pagination.prev_page_url"><i class="fas fa-angle-left"></i></button>
       <span>Page {{ pagination.current_page }} sur {{ pagination.last_page }}</span>
@@ -22,14 +26,15 @@ export default {
     return {
       results: null,
       url: 'http://127.0.0.1:8000/api/albums?page=1',
-      pagination: []
+      pagination: [],
+      query_search: ''
     }
   },
   methods: {
-    getResults() {
+    getResults(url) {
       let $this = this
       this.axios
-        .get(this.url)
+        .get(url)
         .then(response => {
           this.results = response.data
           $this.makePagination(response.data)
@@ -47,11 +52,16 @@ export default {
     },
     fetchPaginateResults(url) {
       this.url = url
-      this.getResults()
+      this.getResults(this.url)
+    },
+    fetchSearchBarResults(e) {
+      e.preventDefault();
+      let url = `${this.url}&title=${this.query_search}`
+      this.getResults(url)
     }
   },
   mounted () {
-    this.getResults()
+    this.getResults(this.url)
   }
 }
 </script>
