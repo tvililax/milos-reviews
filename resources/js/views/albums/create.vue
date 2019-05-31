@@ -22,6 +22,13 @@
         </div>
 
         <div>
+          <label for="types">Choisissez un artiste</label>
+          <select id="types" v-model="type_ids" multiple>
+              <option v-for="type in types" :key="type.id" :value="type.id">{{ type.name }}</option>
+          </select>
+        </div>
+
+        <div>
           <input type="submit" value="Créer">
         </div>
       </form>
@@ -38,6 +45,7 @@ export default {
       types: null,
       title: '',
       cover: '',
+      type_ids: [],
       artist_id: this.$route.query.artist ? this.$route.query.artist : '',
       error: null
     }
@@ -51,6 +59,7 @@ export default {
       formData.append('cover', this.cover);
       formData.append('title', this.title);
       formData.append('artist_id', this.artist_id);
+      formData.append('types', this.type_ids);
 
       this.axios.post('http://127.0.0.1:8000/api/albums', formData,
       {

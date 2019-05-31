@@ -10,7 +10,7 @@ class AlbumController extends Controller
 {
     public function index()
     {
-        $albums = Album::with(['artist', 'cover']);
+        $albums = Album::with(['artist', 'cover', 'types:name']);
 
         if ( !empty(request()->input('page')) ) {
             return $albums->paginate(15);
@@ -27,6 +27,11 @@ class AlbumController extends Controller
             'src'      => asset('/storage/'.$path),
             'album_id' => $album->id
         ]);
+
+        $typeIds = $request->input('types');
+        $typeIds = explode(',', $typeIds);
+
+        $album->types()->attach($typeIds);
 
         $album->cover_id = $cover->id;
         $album->save();
