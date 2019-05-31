@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
-    protected $with = ['albums'];
+    protected $fillable = ['name'];
 
     public function albums()
     {
