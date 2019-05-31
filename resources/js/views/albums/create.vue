@@ -16,7 +16,7 @@
 
         <div>
           <label for="artist_id">Choisissez un artiste</label>
-          <select id="artist_id" v-model="selected_artist">
+          <select id="artist_id" v-model="artist_id">
               <option v-for="artist in artists" :key="artist.id" :value="artist.id">{{ artist.nickname }}</option>
           </select>
         </div>
@@ -37,7 +37,7 @@ export default {
       types: null,
       title: '',
       cover: '',
-      selected_artist: this.$route.query.artist ? this.$route.query.artist : '',
+      artist_id: this.$route.query.artist ? this.$route.query.artist : '',
       error: null
     }
   },
@@ -49,7 +49,7 @@ export default {
       let formData = new FormData();
       formData.append('cover', this.cover);
       formData.append('title', this.title);
-      formData.append('artist_id', this.selected_artist);
+      formData.append('artist_id', this.artist_id);
 
       this.axios.post('http://127.0.0.1:8000/api/albums', formData,
       {
@@ -76,7 +76,7 @@ export default {
 
     this.axios
       .get(`http://127.0.0.1:8000/api/types`)
-      .then(response => (this.artists = response.data))
+      .then(response => (this.types = response.data))
   }
 }
 </script>
