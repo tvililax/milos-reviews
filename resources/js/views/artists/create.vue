@@ -43,6 +43,7 @@
       </form>
       <div style='color: green;' id="message"></div>
       {{ error }}
+      <div id="msg" style="color:green; text-align:center; font-family: Noto Sans HK;"></div>
   </div>
 </template>
 <script>
@@ -82,6 +83,7 @@ export default {
       })
       .then(function(response){
         currentObj.error = null;
+        document.querySelector("#msg").innerHTML = "Artiste ajouté !";
         // TODO redirection
       })
       .catch(function(error){

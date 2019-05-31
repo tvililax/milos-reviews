@@ -26,6 +26,7 @@
         </div>
       </form>
       {{ error }}
+      <div id="msg" style="color:green; text-align:center; font-family: Noto Sans HK;"></div>
   </div>
 </div>
 </template>
@@ -59,6 +60,7 @@ export default {
       })
       .then(function(response){
         currentObj.error = null;
+        document.querySelector('#msg').innerHTML = "Album crée !"
         // TODO redirection
       })
       .catch(function(error){
