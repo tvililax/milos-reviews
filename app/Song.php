@@ -35,11 +35,15 @@ class Song extends Model
             ]);
 
             $result = json_decode($result->getBody()->getContents());
-            $tracklist = $result->message->body->track_list;
 
-            if ( !empty($tracklist) )
+            if ( !empty($result->message->body) )
             {
-                $model->lyrics_id = $tracklist[0]->track->track_id;
+                $tracklist = $result->message->body->track_list;
+
+                if ( !empty($tracklist) )
+                {
+                    $model->lyrics_id = $tracklist[0]->track->track_id;
+                }
             }
         });
     }
