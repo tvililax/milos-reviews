@@ -16,7 +16,7 @@ class TypeController extends Controller
 
     public function show($id)
     {
-        return Artist::with(['albums'])->find($id);
+        return Type::with(['albums'])->find($id);
     }
 
     public function store(TypeStoreRequest $request)

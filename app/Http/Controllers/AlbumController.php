@@ -41,7 +41,7 @@ class AlbumController extends Controller
 
     public function show($id)
     {
-        return Album::with(['songs', 'artist'])->find($id);
+        return Album::with(['songs', 'artist', 'types'])->find($id);
     }
 
     public function update(Request $request, $id)
