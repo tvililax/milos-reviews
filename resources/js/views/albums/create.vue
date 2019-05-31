@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       artists: null,
+      types: null,
       title: '',
       cover: '',
       selected_artist: this.$route.query.artist,
@@ -66,7 +67,11 @@ export default {
   },
   mounted () {
     this.axios
-      .get(`http://127.0.0.1:8000/api/artists?page=all`)
+      .get(`http://127.0.0.1:8000/api/artists`)
+      .then(response => (this.artists = response.data))
+
+    this.axios
+      .get(`http://127.0.0.1:8000/api/types`)
       .then(response => (this.artists = response.data))
   }
 }

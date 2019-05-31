@@ -10,10 +10,12 @@ class AlbumController extends Controller
 {
     public function index()
     {
-        if ( request()->input('page') == 'all') {
-            return Album::all();
+        $albums = Album::with(['artist', 'cover']);
+
+        if ( !empty(request()->input('page')) ) {
+            return $albums->paginate(15);
         }
-        return Album::with(['artist', 'cover'])->paginate(15);
+        return $albums->get();
     }
 
     public function store(AlbumStoreRequest $request)

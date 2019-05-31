@@ -68,11 +68,11 @@ export default {
   },
   mounted () {
     this.axios
-      .get(`http://127.0.0.1:8000/api/albums?page=all`)
+      .get(`http://127.0.0.1:8000/api/albums`)
       .then(response => (this.albums = response.data))
 
     this.axios
-      .get(`http://127.0.0.1:8000/api/artists?page=all`)
+      .get(`http://127.0.0.1:8000/api/artists`)
       .then(response => (this.artists = response.data))
   }
 }

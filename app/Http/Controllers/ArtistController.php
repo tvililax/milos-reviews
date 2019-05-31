@@ -11,10 +11,10 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        if ( request()->input('page') == 'all') {
-            return Artist::all();
+        if ( !empty(request()->input('page')) ) {
+            return Artist::paginate(15);
         }
-        return Artist::paginate(15);
+        return Artist::all();
     }
 
     public function show($id)

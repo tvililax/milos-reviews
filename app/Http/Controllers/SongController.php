@@ -12,7 +12,11 @@ class SongController extends Controller
 {
     public function index()
     {
-        return Song::with(['artist', 'album'])->paginate(15);
+        $songs = Song::with(['artist', 'album']);
+        if ( !empty(request()->input('page')) ) {
+            return $songs->paginate(15);
+        }
+        return $songs->get();
     }
 
     public function show($id)
