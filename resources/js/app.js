@@ -42,7 +42,7 @@ const router = new VueRouter({
         },
         {
             path: '/artists/create',
-            name: 'artist',
+            name: 'artistCreate',
             component: ArtistsCreate,
         },
         {

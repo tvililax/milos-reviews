@@ -1,12 +1,13 @@
 <template>
   <div id="data-albums">
+    <div class='add-list'><router-link :to="{ name: 'albumCreate'}">Ajouter un album</router-link></div>
 		<div class='album' v-for="album in results.data" :key="album.id">
 			<a v-bind:href="'album/'+album.id">
 				<img v-bind:src=album.cover.src />
 				<p class="artist-name">{{ album.title }} - {{ album.artist.nickname }}</p>
 			</a>
 		</div>
-
+    
     <div class="pagination">
       <button class='page' v-on:click="fetchPaginateResults(pagination.prev_page_url)" :disabled="!pagination.prev_page_url"><i class="fas fa-angle-left"></i></button>
       <span>Page {{ pagination.current_page }} sur {{ pagination.last_page }}</span>

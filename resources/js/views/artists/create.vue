@@ -1,5 +1,6 @@
 <template>
   <div class="song-create">
+    <div style='float:left;'><router-link :to="{ name: 'artists'}">Retour</router-link></div>
       <form @submit="formSubmit">
         <div>
           <label for="nickname">Nom de scène : *</label>

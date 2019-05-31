@@ -1,5 +1,6 @@
 <template>
 	<div id="data-artists">
+    <div class='add-list' style="width:115px;"><router-link :to="{ name: 'artistCreate'}">Ajouter un artiste</router-link></div>
 		<div class='artist' v-for="artist in results.data" :key="artist.id">
 			<a v-bind:href="'artist/'+artist.id">
 				<img v-bind:src=artist.picture_src />

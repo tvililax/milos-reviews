@@ -1,8 +1,8 @@
 <template>
 	<div class="artist-info">
         <div id="left-album">
+        <h2>{{ album.title }} ({{ album.artist.nickname }})</h2>  
         <img v-bind:src=album.cover.src />
-        <h2>{{ album.title }} ({{ album.artist.nickname }})</h2>
         </div>
         <div id="album-content">
         <h3>Morceaux : </h3>

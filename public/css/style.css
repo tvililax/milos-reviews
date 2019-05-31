@@ -178,3 +178,12 @@ td{
     top:15%;
     right: 15%;
 }
+.add-list{
+    background:#222;
+    color: white;
+    padding: 5px;
+    font-family: Staatliches;
+    width: 108px;
+    margin:0 auto;
+    margin-bottom: 50px;
+}

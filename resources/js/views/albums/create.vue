@@ -1,5 +1,6 @@
 <template>
   <div class="album-create">
+    <div style='float:left;'><router-link :to="{ name: 'albums'}">Retour</router-link></div><br>
       <form @submit="formSubmit">
         <div>
           <label for="title">Choisissez un nom :</label>
