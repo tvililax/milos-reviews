@@ -9,6 +9,12 @@ use App\Http\Requests\ArtistStoreRequest;
 
 class ArtistController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/api/artists",
+     *     @OA\Response(response="200", description="Return list of artists")
+     * )
+     */
     public function index()
     {
 
