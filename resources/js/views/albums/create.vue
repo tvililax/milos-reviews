@@ -33,7 +33,7 @@ export default {
       types: null,
       title: '',
       cover: '',
-      selected_artist: this.$route.query.artist,
+      selected_artist: this.$route.query.artist ? this.$route.query.artist : '',
       error: null
     }
   },

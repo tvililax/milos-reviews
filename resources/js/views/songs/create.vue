@@ -41,8 +41,8 @@ export default {
       artists: null,
       title: '',
       duration: '',
-      selected_artist: this.$route.query.artist,
-      selected_album: this.$route.query.album,
+      selected_artist: this.$route.query.artist ? this.$route.query.artist : '',
+      selected_album: this.$route.query.album ? this.$route.query.album : '',
       error: null
     }
   },
