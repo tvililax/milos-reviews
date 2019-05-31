@@ -11,10 +11,15 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        if ( !empty(request()->input('page')) ) {
-            return Artist::paginate(15);
+
+        if (request()->input('nickname')) {
+            $artist = Artist::where('nickname', 'like', "%{request()->input('nickname')}");
         }
-        return Artist::all();
+
+        if ( !empty(request()->input('page')) ) {
+            isset($artist) ? $artist->paginate(15) : Artist::paginate(15);
+        }
+        return isset($artist) ? $artist->get() : Artist::all();
     }
 
     public function show($id)
