@@ -13,7 +13,7 @@
 
         <div>
            <label for="place">Ville : *</label>
-          <input type="text" name="place" id="place" placeholder="Entrer un prénom" v-model="place" required>
+          <input type="text" name="place" id="place" placeholder="Entrer une ville" v-model="place" required>
         </div>
 
         <div>
@@ -23,12 +23,17 @@
 
         <div>
           <label for="last_name">Nom :</label>
-          <input type="text" name="last_name" id="last_name" placeholder="Entrer un nom" v-model="last_name" required>
+          <input type="text" name="last_name" id="last_name" placeholder="Entrer un nom" v-model="last_name">
         </div>
 
         <div>
           <label for="first_name">Prénom :</label>
-          <input type="text" name="first_name" id="first_name" placeholder="Entrer un prénom" v-model="first_name" required>
+          <input type="text" name="first_name" id="first_name" placeholder="Entrer un prénom" v-model="first_name">
+        </div>
+
+        <div>
+          <label for="birthdate">Date d'anniversaire (format : YYYY-MM-DD) :</label>
+          <input type="text" name="birthdate" id="birthdate" placeholder="Entrer une date" v-model="birthdate">
         </div>
 
         <div>
@@ -49,6 +54,7 @@ export default {
       place: '',
       bio: '',
       image: '',
+      birthdate: null,
       error: null
     }
   },
@@ -65,6 +71,7 @@ export default {
       formData.append('place', this.place);
       formData.append('bio', this.bio);
       formData.append('image', this.image);
+      formData.append('birthdate', this.birthdate);
 
       this.axios.post('http://127.0.0.1:8000/api/artists', formData,
       {

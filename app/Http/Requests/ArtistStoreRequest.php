@@ -14,7 +14,6 @@ class ArtistStoreRequest extends FormRequest
     {
         return [
             'nickname'    => 'required_without_all:last_name,first_name',
-            'birthdate'   => 'date',
             'bio'         => 'required|min:3|max:2500',
             'image'       => 'required|mimes:jpeg,png',
             'place'       => 'required'
