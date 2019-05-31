@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
+    protected $fillable = ['nickname', 'first_name', 'last_name', 'bio', 'place'];
+
     public function albums()
     {
         return $this->hasMany('App\Album');

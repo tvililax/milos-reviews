@@ -26,6 +26,10 @@ class ArtistController extends Controller
     {
         $artist = Artist::create($request->all());
 
+        $path  = $request->file('image')->store('images', ['disk' => 'public']);
+        $artist->picture_src = asset('/storage/'.$path);
+        $artist->save();
+
         return response()->json($artist, 201);
     }
 

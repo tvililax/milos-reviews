@@ -11,14 +11,15 @@ import Home from './views/Home'
 
 import Artists from './views/artists/index'
 import Artist from './views/artists/show'
+import ArtistsCreate from './views/artists/create'
 
 import Albums from './views/albums/index'
 import Album from './views/albums/show'
-import AlbumCreate from './views/albums/create'
+import AlbumsCreate from './views/albums/create'
 import AlbumEdit from './views/albums/edit'
 
 import Song from './views/songs/show'
-import SongCreate from './views/songs/create'
+import SongsCreate from './views/songs/create'
 import SongEdit from './views/songs/edit'
 
 const router = new VueRouter({
@@ -40,6 +41,11 @@ const router = new VueRouter({
             component: Artist,
         },
         {
+            path: '/artists/create',
+            name: 'artist',
+            component: ArtistsCreate,
+        },
+        {
             path: '/albums',
             name: 'albums',
             component: Albums,
@@ -52,7 +58,7 @@ const router = new VueRouter({
         {
             path: '/albums/create',
             name: 'albumCreate',
-            component: AlbumCreate,
+            component: AlbumsCreate,
         },
         {
             path: '/album/:id/edit',
@@ -67,7 +73,7 @@ const router = new VueRouter({
         {
             path: '/songs/create',
             name: 'songCreate',
-            component: SongCreate,
+            component: SongsCreate,
         },
         {
             path: '/song/:id/edit',

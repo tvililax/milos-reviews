@@ -29,7 +29,7 @@ class AlbumController extends Controller
         $album->cover_id = $cover->id;
         $album->save();
 
-        return $album;
+        return response()->json($album, 201);
     }
 
     public function show($id)

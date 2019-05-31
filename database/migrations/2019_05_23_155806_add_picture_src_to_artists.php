@@ -14,7 +14,7 @@ class AddPictureSrcToArtists extends Migration
     public function up()
     {
         Schema::table('artists', function (Blueprint $table) {
-            $table->string('picture_src');
+            $table->string('picture_src')->nullable();
         });
     }
 

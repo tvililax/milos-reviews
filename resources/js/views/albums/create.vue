@@ -53,6 +53,7 @@ export default {
           }
       })
       .then(function(response){
+        currentObj.error = null;
         // TODO redirection
       })
       .catch(function(error){

@@ -17,7 +17,7 @@ class CreateArtistsTable extends Migration
             $table->bigIncrements('id');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('nickname')->nullable();
+            $table->string('nickname');
             $table->date('birthdate')->nullable();
             $table->string('place')->nullable();
             $table->longText('bio');
