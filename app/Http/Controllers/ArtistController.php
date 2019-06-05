@@ -23,7 +23,7 @@ class ArtistController extends Controller
         }
 
         if ( !empty(request()->input('page')) ) {
-            isset($artist) ? $artist->paginate(15) : Artist::paginate(15);
+            return isset($artist) ? $artist->paginate(15) : Artist::paginate(15);
         }
         return isset($artist) ? $artist->get() : Artist::all();
     }
