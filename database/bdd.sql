@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 30 mai 2019 à 09:52
+-- Généré le :  mer. 05 juin 2019 à 18:39
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -112,7 +112,7 @@ INSERT INTO `artists` (`id`, `first_name`, `last_name`, `nickname`, `birthdate`,
 (18, '', '', 'Mac Tyer', '1975-12-10', 'Aubervilliers (93)', 'The chief difficulty Alice found at first was moderate. But the snail replied \"Too far, too far!\" and gave a look askance-- Said he thanked the whiting kindly, but he.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://statics.lesinrocks.com/content/thumbs/uploads/2018/09/width-1125-height-612/tyer.jpg'),
 (19, '', '', 'Sefyu', '1978-02-08', 'Aulnay-sous-Bois (93)', 'ARE OLD, FATHER WILLIAM,\"\' said the Dodo, \'the best way you can;--but I must go and take it away!\' There was a good way off, and found that, as nearly as.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://cd1.rap2france.com/public/medias/news/4240/660x330/mdpi/sefyu-la-musique-n-est-pas-ma-priorite-1539969165.jpg'),
 (20, '', '', 'JUL', '1989-05-12', 'Marseille (13)', 'Footman. \'That\'s the most important piece of evidence we\'ve heard yet,\' said Alice; \'it\'s laid for a moment to be lost: away went Alice after it, and kept doubling itself up and down, and felt quite unhappy at the thought that it signifies much,\' she said to herself.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://i0.wp.com/www.13or-du-hiphop.fr/wp-content/uploads/2019/05/10212105.jpg?resize=530%2C254&ssl=1'),
-(21, '', '', 'MHD', '2003-01-07', 'Paris (93)', 'Alice very politely; but she could not remember ever having seen such a puzzled expression that she did not much larger than a pig, and she at once set to work nibbling at the Lizard as she could for sneezing. There.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://cdn-lejdd.lanmedia.fr/var/europe1/storage/images/lejdd/societe/faits-divers/accuse-davoir-participe-a-une-rixe-mortelle-le-rappeur-mhd-clame-son-innocence-3871226/52457615-1-fre-FR/Accuse-d-avoir-participe-a-une-rixe-mortelle-le-rappeur-MHD-clame-son-innocence.jpg'),
+(21, '', '', 'MHD', '2003-01-07', 'Paris (93)', 'Alice very politely; but she could not remember ever having seen such a puzzled expression that she did not much larger than a pig, and she at once set to work nibbling at the Lizard as she could for sneezing. There.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://cdn-lejdd.lanmedia.fr/var/europe1/storage/images/lejdd/societe/faits-divers/accuse-davoir-participe-a-une-rixe-mortelle-le-rappeur-mhd-clame-son-innocence-3871226/52457615-1-fre-FR/Accuse-d-avoir-participe-a-une-rixe-mortelle-le-rappeur-MHD-clame-'),
 (22, '', '', 'Rémy', '1987-03-12', 'Aubervilliers (93)', 'THE VOICE OF THE SLUGGARD,\"\' said the Mock Turtle repeated thoughtfully. \'I should like to be nothing but the cook took the hookah into its nest. Alice crouched.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://static.booska-p.com/images/news/remy-nous-plonge-dans-son-enfance-avec-rappelle-toi-videoclip-649.jpg'),
 (23, '', '', 'SCH', '1975-10-28', 'Marseille (13)', 'Alice. The King turned pale, and shut his note-book hastily. \'Consider your verdict,\' he said to herself, \'I wonder what they\'ll.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://photos.lci.fr/images/613/344/export_jnxn80ycpmmtg-f2aad6-0@1x.jpeg'),
 (24, '', '', 'Kalash Criminel', '1994-08-02', 'Sevran (93)', 'Alice to herself. \'Shy, they seem to come yet, please your Majesty,\' said Two, in a louder tone. \'ARE you to leave the court; but on the end of the bill, \"French, music, AND WASHING--extra.\"\' \'You couldn\'t have done that?\' she thought. \'I must be the right height to be.\' \'It is wrong from beginning to see what was.', '2019-05-28 12:33:55', '2019-05-28 12:33:55', 'https://images.wave.fr/images//kalash-criminel-entretien-clash-elysee-1200x600.jpg'),
@@ -195,21 +195,22 @@ CREATE TABLE IF NOT EXISTS `songs` (
   PRIMARY KEY (`id`),
   KEY `songs_artist_id_foreign` (`artist_id`),
   KEY `songs_album_id_foreign` (`album_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `songs`
 --
 
 INSERT INTO `songs` (`id`, `artist_id`, `title`, `duration`, `created_at`, `updated_at`, `album_id`, `lyrics_id`) VALUES
-(1, 1, 'Ridin', '00:02:13', NULL, NULL, 1, NULL),
-(2, 1, 'Terrain', '00:02:06', NULL, NULL, 1, NULL),
-(3, 1, 'Ouest Side', '02:00:00', '2019-05-29 12:16:58', '2019-05-29 12:16:58', 1, 4889567),
-(4, 1, 'Ouest Side', '02:00:00', '2019-05-29 12:17:12', '2019-05-29 12:17:12', 1, 4889567),
-(5, 1, 'n°10', '03:10:00', '2019-05-29 13:05:54', '2019-05-29 13:05:54', 1, 34374424),
-(6, 2, 'or noir', '01:15:00', '2019-05-29 13:09:25', '2019-05-29 13:09:25', 2, 32773611),
-(7, 1, 'pitbull', '02:00:00', '2019-05-29 13:48:36', '2019-05-29 13:48:36', 1, 131051622),
-(8, 1, 'A4', '03:22:00', '2019-05-30 07:37:11', '2019-05-30 07:37:11', 1, 87064537);
+(13, 1, 'Bouyon', '00:03:20', '2019-06-05 16:34:00', '2019-06-05 16:34:00', 1, 141974927),
+(11, 1, 'Drapeau Noir', '00:03:23', '2019-06-05 16:33:10', '2019-06-05 16:33:10', 1, 141974925),
+(10, 1, 'Friday', '00:03:37', '2019-06-05 16:32:57', '2019-06-05 16:32:57', 1, 141974924),
+(9, 1, 'Centurion', '00:01:39', '2019-06-05 16:32:34', '2019-06-05 16:32:34', 1, 141974923),
+(14, 1, 'Magnifique', '00:03:11', '2019-06-05 16:34:12', '2019-06-05 16:34:12', 1, 141974928),
+(16, 1, 'Nougat', '00:02:57', '2019-06-05 16:34:34', '2019-06-05 16:34:34', 1, 141974930),
+(17, 1, 'Terrain', '00:02:29', '2019-06-05 16:35:16', '2019-06-05 16:35:16', 1, 141974931),
+(20, 1, 'Ridin', '00:03:31', '2019-06-05 16:36:10', '2019-06-05 16:36:10', 1, 141974934),
+(21, 1, 'Petite fille', '00:03:35', '2019-06-05 16:36:25', '2019-06-05 16:36:25', 1, 141974935);
 
 -- --------------------------------------------------------
 
