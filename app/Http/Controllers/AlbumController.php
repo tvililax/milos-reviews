@@ -13,7 +13,7 @@ class AlbumController extends Controller
         $albums = Album::with(['artist', 'cover', 'types:name']);
 
         if (request()->input('title')) {
-            $albums->where('title', 'like', "%{request()->input('title')}");
+            $albums->where('title', 'LIKE', '%'.request()->input('title').'%');
         }
 
         if ( !empty(request()->input('page')) ) {

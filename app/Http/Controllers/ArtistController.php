@@ -19,7 +19,7 @@ class ArtistController extends Controller
     {
 
         if (request()->input('nickname')) {
-            $artist = Artist::where('nickname', 'like', "%{request()->input('nickname')}");
+            $artist = Artist::where('nickname', 'like', '%'.request()->input('nickname').'%');
         }
 
         if ( !empty(request()->input('page')) ) {
