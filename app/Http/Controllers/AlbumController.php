@@ -48,10 +48,13 @@ class AlbumController extends Controller
         return Album::with(['songs', 'artist', 'types'])->find($id);
     }
 
-    public function update(Request $request, $id)
+    public function update(AlbumStoreRequest $request, Album $album)
     {
-        //
+        $album->update($request->all());
+
+        return response()->json($album, 200);
     }
+
 
     public function destroy($id)
     {
