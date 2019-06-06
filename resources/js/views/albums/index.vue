@@ -1,7 +1,7 @@
 <template>
   <div id="data-albums">
     <form @submit="fetchSearchBarResults">
-      <input type="text" name="title" id="title" v-model="query_search">
+      <input type="text" name="title" id="title" placeholder="Search an album" v-model="query_search"><i style='margin-left: 5px;' class="fas fa-search"></i>
     </form>
 
     <div class='add-list'><router-link :to="{ name: 'albumCreate'}">Ajouter un album</router-link></div>
